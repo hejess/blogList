@@ -11,8 +11,7 @@ const favoriteBlog = (blogs) => {
     }
     const result = blogs.reduce((favorite, blog) => blog.likes > favorite.likes ? blog : favorite, blogs[0])
     // Create a new object by destructuring the original object and excluding the specified properties
-    const { __v, _id, url, ...newObject } = result
-    return newObject
+    return { title: result.title, author: result.author, likes: result.likes }
 }
 module.exports = {
     dummy, totalLikes, favoriteBlog
