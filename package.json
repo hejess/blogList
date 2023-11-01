@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "jest --verbose "
+    "start": "NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=development nodemon index.js",
+    "test": "NODE_ENV=test jest --verbose --runInBand",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix ."
   },
   "author": "Jessie He",
   "license": "MIT",
@@ -17,6 +19,7 @@
     "mongoose": "^7.6.4"
   },
   "devDependencies": {
+    "eslint": "^8.52.0",
     "jest": "^29.7.0",
     "nodemon": "^3.0.1"
   },
