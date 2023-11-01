@@ -3,7 +3,7 @@
 // capable only of performing middleware and routing functions. 
 // Every Express application has a built-in app router.
 const blogsRouter = require('express').Router()
-const Blog = require('../models/blogs')
+const Blog = require('../models/blog')
 
 blogsRouter.get('/', (request, response) => {
     Blog
