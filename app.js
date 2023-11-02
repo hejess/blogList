@@ -7,6 +7,7 @@ const blogsRouter = require('./controllers/blogs')
 const mongoose = require('mongoose')
 
 logger.info('Connecting to MongoDB')
+logger.info(config.MONGODB_URI)
 
 mongoose.connect(config.MONGODB_URI)
     .then(() => {

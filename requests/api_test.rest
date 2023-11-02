@@ -4,8 +4,38 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title": "Hello",
+    "title": "Hi",
     "author": "Me",
     "url": "test.com",
-    "likes": 3
+    "likes": 30
+}
+###
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "Alo",
+    "author": "Melbourne",
+    "url": "test.com",
+    "likes": 99
+}
+
+###
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "Kiki is a cat",
+    "author": "Me Hotel",
+    "url": "test.com",
+    "likes": 99
+}
+###
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "Kiki is a dog",
+    "author": "Me Hotel",
+    "likes": 99
 }

@@ -1,10 +1,19 @@
 const mongoose = require('mongoose')
 
 const blogSchema = new mongoose.Schema({
-    title: String,
+    title: {
+        type: String,
+        required: [true, 'Blog title required']
+    },
     author: String,
-    url: String,
-    likes: Number
+    url: {
+        type: String,
+        required: [true, 'Blog url required']
+    },
+    likes: {
+        type: Number,
+        default: 0
+    }
 })
 // It's used to configure how the data from MongoDB documents (Mongoose models)
 // should be transformed when converted to JSON format.
