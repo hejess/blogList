@@ -27,4 +27,12 @@ app.use(cors())
 app.use(express.json())
 app.use('/api/blogs', blogsRouter) //router is a middleware
 
+const errorHandler = (error, request, response, next) => {
+    if (error.name === 'ValidationError') {
+        response.status(400).json({ error: error.message })
+    }
+    next(error)
+}
+app.use(errorHandler)
+
 module.exports = app
