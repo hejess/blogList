@@ -39,3 +39,15 @@ Content-Type: application/json
     "author": "Me Hotel",
     "likes": 99
 }
+###
+DELETE http://localhost:3003/api/blogs/654
+###
+PUT http://localhost:3003/api/blogs/654439f3a1087ee1c0e0dc51
+Content-Type: application/json
+
+{
+    "title": "Kiki is a cat",
+    "author": "Me Hotel",
+    "url": "test.com",
+    "likes": 9999
+}

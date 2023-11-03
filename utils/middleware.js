@@ -5,6 +5,8 @@ const morganLogging = morgan(':method :url :status :res[content-length] - :respo
 const errorHandler = (error, request, response, next) => {
     if (error.name === 'ValidationError') {
         response.status(400).json({ error: error.message })
+    } else if (error.name === 'CastError') {
+        response.status(400).json({ error: 'invalid blog id' })
     }
     next(error)
 }
