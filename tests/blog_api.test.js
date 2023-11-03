@@ -2,8 +2,7 @@ const mongoose = require('mongoose')
 const supertest = require('supertest')
 const test_helper = require('./test_helper')
 const app = require('../app')
-const api = supertest(app)
-
+const api = supertest(app) // superagent object, supertest creates and uses some ephemeral port for testing
 const Blog = require('../models/blog')
 
 beforeEach(async () => {
