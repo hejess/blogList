@@ -105,6 +105,16 @@ describe('PUT', () => {
         const blogAtEnd = await test_helper.getBlogById(id)
         expect(blogAtEnd.likes).toBe(likes+1000)
     })
+
+    test('update by malformed id, expect 400 Bad Request', async () => {
+        const blogsAtStart = await test_helper.blogsInDB()
+        const blogToUpdate = blogsAtStart[0]
+        const id = 'fakeId'
+        await api
+            .put(`/api/blogs/${id}`)
+            .send({ ...blogToUpdate, likes: blogToUpdate.likes+1000 })
+            .expect(400)
+    })
 })
 
 afterAll(async () => {
