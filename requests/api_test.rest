@@ -51,3 +51,13 @@ Content-Type: application/json
     "url": "test.com",
     "likes": 9999
 }
+
+###
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "username": "Kiki",
+    "name": "Me Hotel",
+    "password": "meowmeow"
+}
